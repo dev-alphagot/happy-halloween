@@ -121,6 +121,7 @@
                 document.body.innerHTML = cr;
 
                 let d = new Date();
+                d.setTime(d.getTime() + 500)
             
             if(d.getFullYear() % 10000 < 1000){
                 document.getElementById("send").innerHTML = "　"
