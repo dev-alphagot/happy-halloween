@@ -335,6 +335,10 @@
                 document.getElementById("10mm2").innerHTML = "십" 
 
                 let dg = (d.getMinutes()) / 10
+
+if(d.getMinutes() < 20){
+    document.getElementById("10mm1").innerHTML = "　"
+}
                 
                 if(dg < 4){
                     for(i=4;i>dg; i--){
@@ -381,6 +385,10 @@
                 document.getElementById("10s2").innerHTML = "십" 
 
                 let dg = (d.getSeconds()) / 10
+
+                if(d.getSeconds() < 20){
+                    document.getElementById("10s1").innerHTML = "　"
+                }
                 
                 if(dg < 4){
                     for(i=4;i>dg; i--){
