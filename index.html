@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>令和7年まで</title>
+    </head>
+    <body>
+        <style>
+            body {
+                background-color: black;
+                font-family: '마루 부리', monospace, 'GulimChe';
+                font-size: x-large;
+                font-weight: 400;
+
+                min-width: 99dvw;
+                min-height: 99dvh;
+
+                div {
+                    text-align: center;
+                    color: white;
+                    font-weight: normal;
+                    float: left;
+
+                    margin-top: unset;
+                }
+
+                .d {
+                    background: linear-gradient(to top, rgba(255, 255, 255, 0%), rgba(255, 255, 255, 100%), rgba(255, 255, 255, 0%));
+                    color: transparent;
+                    font-weight: bold;
+                    background-clip: text;
+                }
+
+                #asdf {
+                    align-items: center;
+                    float: left;
+
+                    min-width: 99dvw;
+                    min-height: 99dvh;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        </style>
+        <div id="asdf">
+            <div class="d" id="send">일<br>이<br>삼<br>사<br>오<br>육<br>칠<br>팔<br>구</div>
+            <div           id="sen">천</div>
+            <div class="d" id="hyakud">일<br>이<br>삼<br>사<br>오<br>육<br>칠<br>팔<br>구</div>
+            <div           id="hyaku">백</div>
+            <div class="d" id="juud">일<br>이<br>삼<br>사<br>오<br>육<br>칠<br>팔<br>구</div>
+            <div           id="juu">십</div>
+            <div class="d" id="digit">일<br>이<br>삼<br>사<br>오<br>육<br>칠<br>팔<br>구</div>
+            <div>년</div>
+            <div>의</div>
+            <div>　</div>
+            <div class="d" id="10m">열</div>
+            <div class="d" id="md1">한<br>두<br>세<br>네<br>다<br>여<br>일<br>여<br>아</div>
+            <div class="d" id="md2">
+                　<br>
+                　<br>
+                　<br>
+                　<br>
+                섯<br>섯<br>곱<br>덟<br>홉</div>
+            <div>　</div>
+            <div>번</div>
+            <div>째</div>
+            <div>　</div>
+            <div>달</div>
+            <div>　</div>
+            <div class="d" id="10d1">　<br>열<br>스<br>서<br>　</div>
+            <div class="d" id="10d2">
+                　<br>
+                　<br>
+                물<br>른<br>
+                　
+            </div>
+            <div class="d" id="dd1">한<br>두<br>세<br>네<br>다<br>여<br>일<br>여<br>아</div>
+            <div class="d" id="dd2">
+                　<br>
+                　<br>
+                　<br>
+                　<br>
+                섯<br>섯<br>곱<br>덟<br>홉</div>
+            <div>　</div>
+            <div>번</div>
+            <div>째</div>
+            <div>　</div>
+            <div>날</div>
+            <div>　</div>
+            <div>오</div>
+            <div class="d" id="jh">　<br>전<br>후</div>
+            <div>　</div>
+            <div id="10h">열</div>
+            <div class="d" id="hd1">한<br>두<br>세<br>네<br>다<br>여<br>일<br>여<br>아</div>
+            <div class="d" id="hd2">
+                　<br>
+                　<br>
+                　<br>
+                　<br>
+                섯<br>섯<br>곱<br>덟<br>홉</div>
+            <div>시</div>
+            <div>　</div>
+            <div class="d" id="10mm1">　<br>이<br>삼<br>사<br>오<br>육<br>　</div>
+            <div id="10mm2">십</div>
+            <div class="d" id="mmd">일<br>이<br>삼<br>사<br>오<br>육<br>칠<br>팔<br>구</div>
+            <div id="mmi">분</div>
+            <div>　</div>
+            <div class="d" id="10s1">　<br>이<br>삼<br>사<br>오<br>육<br>　</div>
+            <div id="10s2">십</div>
+            <div class="d" id="sd">일<br>이<br>삼<br>사<br>오<br>육<br>칠<br>팔<br>구</div>
+            <div id="si">초</div>
+        </div>
+        <script>
+            const cr = document.body.innerHTML;
+
+            setInterval(() => {
+                document.body.innerHTML = cr;
+
+                let d = new Date();
+            
+            if(d.getFullYear() % 10000 < 1000){
+                document.getElementById("send").innerHTML = "　"
+                document.getElementById("sen").innerHTML = "　"
+            }
+            else {
+                let dg = (d.getFullYear() / 1000) % 10
+                
+                if(dg < 5){
+                    for(i=5;i>dg; i--){
+                        let r = document.getElementById("send").innerHTML
+                        document.getElementById("send").innerHTML = "<br>&nbsp;<br>" + r
+                    }
+                }
+                else if(dg > 5){
+                    for(i=5;i<dg; i++){
+                        let r = document.getElementById("send").innerHTML
+                        document.getElementById("send").innerHTML = r + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+            if(d.getFullYear() % 1000 < 100){
+                document.getElementById("hyakud").innerHTML = "　"
+                document.getElementById("hyaku").innerHTML = "　"
+            }
+            else {
+                let dg = (d.getFullYear() / 100) % 10
+                
+                if(dg < 5){
+                    for(i=5;i>dg; i--){
+                        let r = document.getElementById("hyakud").innerHTML
+                        document.getElementById("hyakud").innerHTML = "<br>&nbsp;<br>" + r
+                    }
+                }
+                else if(dg > 5){
+                    for(i=5;i<dg; i++){
+                        let r = document.getElementById("hyakud").innerHTML
+                        document.getElementById("hyakud").innerHTML = r + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+            if(d.getFullYear() % 100 < 10){
+                document.getElementById("juud").innerHTML = "　"
+                document.getElementById("juu").innerHTML = "　"
+            }
+            else {
+                let dg = (d.getFullYear() / 10) % 10
+                
+                if(dg < 5){
+                    for(i=5;i>dg; i--){
+                        let r = document.getElementById("juud").innerHTML
+                        document.getElementById("juud").innerHTML = "<br>&nbsp;<br>" + r
+                    }
+                }
+                else if(dg > 5){
+                    for(i=5;i<dg; i++){
+                        let r = document.getElementById("juud").innerHTML
+                        document.getElementById("juud").innerHTML = r + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+            if(d.getFullYear() % 10 < 1){
+                document.getElementById("digit").innerHTML = "　"
+            }
+            else {
+                let dg = d.getFullYear() % 10
+                
+                if(dg < 5){
+                    for(i=5;i>dg; i--){
+                        let r = document.getElementById("digit").innerHTML
+                        document.getElementById("digit").innerHTML = "<br>&nbsp;<br>" + r
+                    }
+                }
+                else if(dg > 5){
+                    for(i=5;i<dg; i++){
+                        let r = document.getElementById("digit").innerHTML
+                        document.getElementById("digit").innerHTML = r + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+
+            if(d.getMonth() < 9){
+                document.getElementById("10m").innerHTML = "　"
+            }
+            else {
+                document.getElementById("10m").innerHTML = "십"
+            }
+            if(d.getMonth() % 10 < 0){
+                document.getElementById("md1").innerHTML = "　"
+            }
+            else {
+                let dg = (d.getMonth() + 1) % 10
+
+                if(d.getMonth() < 9 && dg == 1){
+                    document.getElementById("md1").innerHTML = document.getElementById("md1").innerHTML.replace("한", "첫")
+                }
+                
+                if(dg < 5){
+                    for(i=5;i>dg; i--){
+                        let r1 = document.getElementById("md1").innerHTML
+                        document.getElementById("md1").innerHTML = "<br>&nbsp;<br>" + r1
+                        let r2 = document.getElementById("md2").innerHTML
+                        document.getElementById("md2").innerHTML = "<br>&nbsp;<br>" + r2
+                    }
+                }
+                else if(dg > 5){
+                    for(i=5;i<dg; i++){
+                        let r1 = document.getElementById("md1").innerHTML
+                        document.getElementById("md1").innerHTML = r1 + "<br>&nbsp;<br>&nbsp;" 
+                        let r2 = document.getElementById("md2").innerHTML
+                        document.getElementById("md2").innerHTML = r2 + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+
+            if(d.getDate() < 10){
+                document.getElementById("10d1").innerHTML = "　"
+                document.getElementById("10d2").innerHTML = "　"
+            }
+            else {
+                let dg = d.getDate() / 10
+
+                if(d.getDate() == 20){
+                    document.getElementById("10d2").innerHTML = document.getElementById("10d2").innerHTML.replace("물", "무")
+                }
+                
+                if(dg < 2){
+                    for(i=2;i>dg; i--){
+                        let r1 = document.getElementById("10d1").innerHTML
+                        document.getElementById("10d1").innerHTML = "<br>&nbsp;<br>" + r1
+                        let r2 = document.getElementById("10d2").innerHTML
+                        document.getElementById("10d2").innerHTML = "<br>&nbsp;<br>" + r2
+                    }
+                }
+                else if(dg > 2){
+                    for(i=2;i<dg; i++){
+                        let r1 = document.getElementById("10d1").innerHTML
+                        document.getElementById("10d1").innerHTML = r1 + "<br>&nbsp;<br>&nbsp;" 
+                        let r2 = document.getElementById("10d2").innerHTML
+                        document.getElementById("10d2").innerHTML = r2 + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+            if(d.getDate() % 10 < 0){
+                document.getElementById("dd1").innerHTML = "　"
+            }
+            else {
+                let dg = d.getDate() % 10
+
+                if(d.getDate() < 10 && dg == 1){
+                    document.getElementById("dd1").innerHTML = document.getElementById("dd1").innerHTML.replace("한", "첫")
+                }
+                
+                if(dg < 5){
+                    for(i=5;i>dg; i--){
+                        let r1 = document.getElementById("dd1").innerHTML
+                        document.getElementById("dd1").innerHTML = "<br>&nbsp;<br>" + r1
+                        let r2 = document.getElementById("dd2").innerHTML
+                        document.getElementById("dd2").innerHTML = "<br>&nbsp;<br>" + r2
+                    }
+                }
+                else if(dg > 5){
+                    for(i=5;i<dg; i++){
+                        let r1 = document.getElementById("dd1").innerHTML
+                        document.getElementById("dd1").innerHTML = r1 + "<br>&nbsp;<br>&nbsp;" 
+                        let r2 = document.getElementById("dd2").innerHTML
+                        document.getElementById("dd2").innerHTML = r2 + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+
+            if(d.getHours() >= 12){
+                document.getElementById("jh").innerHTML += "<br>&nbsp;<br>&nbsp;" 
+            }
+
+            if((d.getHours() % 12) == 0 || (d.getHours() % 12) >= 10){
+                document.getElementById("10h").innerHTML = "열" 
+            }
+            else {
+                document.getElementById("10h").innerHTML = "　" 
+            }
+            if(d.getHours() % 12 == 10){
+                document.getElementById("dd1").innerHTML = "　"
+            }
+            else {
+                let dg = (d.getHours()) % 10
+
+                if(d.getHours() % 12 == 0){
+                    dg = 2
+                }
+                
+                if(dg < 5){
+                    for(i=5;i>dg; i--){
+                        let r1 = document.getElementById("hd1").innerHTML
+                        document.getElementById("hd1").innerHTML = "<br>&nbsp;<br>" + r1
+                        let r2 = document.getElementById("hd2").innerHTML
+                        document.getElementById("hd2").innerHTML = "<br>&nbsp;<br>" + r2
+                    }
+                }
+                else if(dg > 5){
+                    for(i=5;i<dg; i++){
+                        let r1 = document.getElementById("hd1").innerHTML
+                        document.getElementById("hd1").innerHTML = r1 + "<br>&nbsp;<br>&nbsp;" 
+                        let r2 = document.getElementById("hd2").innerHTML
+                        document.getElementById("hd2").innerHTML = r2 + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+
+            if(d.getMinutes() >= 10){
+                document.getElementById("10mm2").innerHTML = "십" 
+
+                let dg = (d.getMinutes()) / 10
+                
+                if(dg < 4){
+                    for(i=4;i>dg; i--){
+                        let r1 = document.getElementById("10mm1").innerHTML
+                        document.getElementById("10mm1").innerHTML = "<br>&nbsp;<br>" + r1
+                    }
+                }
+                else if(dg > 5){
+                    for(i=5;i<dg; i++){
+                        let r1 = document.getElementById("10mm1").innerHTML
+                        document.getElementById("10mm1").innerHTML = r1 + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+            else {
+                document.getElementById("10mm1").innerHTML = "　"
+                document.getElementById("10mm2").innerHTML = "　" 
+            }
+            if(d.getMinutes() % 10 == 0){
+                document.getElementById("mmd").innerHTML = "　"
+
+                if(d.getMinutes() == 0){
+                    document.getElementById("mmi").innerHTML = "　"
+                }
+            }
+            else {
+                let dg = d.getMinutes() % 10
+                
+                if(dg < 5){
+                    for(i=5;i>dg; i--){
+                        let r1 = document.getElementById("mmd").innerHTML
+                        document.getElementById("mmd").innerHTML = "<br>&nbsp;<br>" + r1
+                    }
+                }
+                else if(dg > 5){
+                    for(i=5;i<dg; i++){
+                        let r1 = document.getElementById("mmd").innerHTML
+                        document.getElementById("mmd").innerHTML = r1 + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+        
+            if(d.getSeconds() >= 10){
+                document.getElementById("10s2").innerHTML = "십" 
+
+                let dg = (d.getSeconds()) / 10
+                
+                if(dg < 4){
+                    for(i=4;i>dg; i--){
+                        let r1 = document.getElementById("10s1").innerHTML
+                        document.getElementById("10s1").innerHTML = "<br>&nbsp;<br>" + r1
+                    }
+                }
+                else if(dg > 5){
+                    for(i=5;i<dg; i++){
+                        let r1 = document.getElementById("10s1").innerHTML
+                        document.getElementById("10s1").innerHTML = r1 + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+            else {
+                document.getElementById("10s1").innerHTML = "　"
+                document.getElementById("10s2").innerHTML = "　" 
+            }
+            if(d.getSeconds() % 10 == 0){
+                document.getElementById("sd").innerHTML = "　"
+
+                if(d.getSeconds() == 0){
+                    document.getElementById("si").innerHTML = "　"
+                }
+            }
+            else {
+                let dg = d.getSeconds() % 10
+                
+                if(dg < 5){
+                    for(i=5;i>dg; i--){
+                        let r = document.getElementById("sd").innerHTML
+                        document.getElementById("sd").innerHTML = "<br>&nbsp;<br>" + r
+                    }
+                }
+                else if(dg > 5){
+                    for(i=5;i<dg; i++){
+                        let r = document.getElementById("sd").innerHTML
+                        document.getElementById("sd").innerHTML = r + "<br>&nbsp;<br>&nbsp;" 
+                    }
+                }
+            }
+            }, 1000)
+        </script>
+    </body>
+</html>
