@@ -104,12 +104,12 @@
                 섯<br>섯<br>곱<br>덟<br>홉</div>
             <div>시</div>
             <div>　</div>
-            <div class="d" id="10mm1">　<br>이<br>삼<br>사<br>오<br>육<br>　</div>
+            <div class="d" id="10mm1">　<br>이<br>삼<br>사<br>오</div>
             <div id="10mm2">십</div>
             <div class="d" id="mmd">일<br>이<br>삼<br>사<br>오<br>육<br>칠<br>팔<br>구</div>
             <div id="mmi">분</div>
             <div>　</div>
-            <div class="d" id="10s1">　<br>이<br>삼<br>사<br>오<br>육<br>　</div>
+            <div class="d" id="10s1">　<br>이<br>삼<br>사<br>오</div>
             <div id="10s2">십</div>
             <div class="d" id="sd">일<br>이<br>삼<br>사<br>오<br>육<br>칠<br>팔<br>구</div>
             <div id="si">초</div>
@@ -121,7 +121,6 @@
                 document.body.innerHTML = cr;
 
                 let d = new Date();
-                d.setTime(d.getTime() + 500)
             
             if(d.getFullYear() % 10000 < 1000){
                 document.getElementById("send").innerHTML = "　"
@@ -242,7 +241,7 @@
                 document.getElementById("10d2").innerHTML = "　"
             }
             else {
-                let dg = d.getDate() / 10
+                let dg = Math.floor(d.getDate() / 10)
 
                 if(d.getDate() == 20){
                     document.getElementById("10d2").innerHTML = document.getElementById("10d2").innerHTML.replace("물", "무")
@@ -334,20 +333,20 @@
             if(d.getMinutes() >= 10){
                 document.getElementById("10mm2").innerHTML = "십" 
 
-                let dg = (d.getMinutes()) / 10
+                let dg = Math.floor((d.getMinutes() + 0) / 10)
 
-if(d.getMinutes() < 20){
-    document.getElementById("10mm1").innerHTML = "　"
-}
+                if(d.getMinutes() < 20){
+                    document.getElementById("10mm1").innerHTML = "　"
+                }
                 
-                if(dg < 4){
-                    for(i=4;i>dg; i--){
+                if(dg < 3){
+                    for(i=3;i>dg; i--){
                         let r1 = document.getElementById("10mm1").innerHTML
                         document.getElementById("10mm1").innerHTML = "<br>&nbsp;<br>" + r1
                     }
                 }
-                else if(dg > 5){
-                    for(i=5;i<dg; i++){
+                else if(dg > 3){
+                    for(i=3;i<dg; i++){
                         let r1 = document.getElementById("10mm1").innerHTML
                         document.getElementById("10mm1").innerHTML = r1 + "<br>&nbsp;<br>&nbsp;" 
                     }
@@ -384,20 +383,22 @@ if(d.getMinutes() < 20){
             if(d.getSeconds() >= 10){
                 document.getElementById("10s2").innerHTML = "십" 
 
-                let dg = (d.getSeconds()) / 10
+                let dg = Math.floor((d.getSeconds() + 0) / 10)
 
                 if(d.getSeconds() < 20){
                     document.getElementById("10s1").innerHTML = "　"
                 }
+
+                console.log(dg)
                 
-                if(dg < 4){
-                    for(i=4;i>dg; i--){
+                if(dg < 3){
+                    for(i=3;i>dg; i--){
                         let r1 = document.getElementById("10s1").innerHTML
                         document.getElementById("10s1").innerHTML = "<br>&nbsp;<br>" + r1
                     }
                 }
-                else if(dg > 5){
-                    for(i=5;i<dg; i++){
+                else if(dg > 3){
+                    for(i=3;i<dg; i++){
                         let r1 = document.getElementById("10s1").innerHTML
                         document.getElementById("10s1").innerHTML = r1 + "<br>&nbsp;<br>&nbsp;" 
                     }
